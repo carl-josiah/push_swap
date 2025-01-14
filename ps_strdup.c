@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 14:12:16 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/08 14:16:47 by ccastro          ###   ########.fr       */
+/*   Created: 2024/07/21 17:12:21 by ccastro           #+#    #+#             */
+/*   Updated: 2025/01/13 11:15:09 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <string.h>
+char	*ps_strdup(const char *s1)
+{
+	size_t	i;
+	char	*s2;
 
-
-
-#endif
+	i = -1;
+	s2 = (char *) malloc(sizeof(char) * ps_strlen(s1) + 1);
+	if (s2 == NULL)
+		return (NULL);
+	while (s1[++i])
+		s2[i] = s1[i];
+	s2[i] = '\0';
+	return (s2);
+}

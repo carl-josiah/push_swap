@@ -6,7 +6,7 @@
 #    By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/08 14:35:42 by ccastro           #+#    #+#              #
-#    Updated: 2025/01/09 11:48:20 by ccastro          ###   ########.fr        #
+#    Updated: 2025/01/14 07:44:47 by ccastro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,13 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SOURCES = sources/main.c\
+SOURCES = \
+main.c \
+ps_atoi.c \
+ps_split.c \
+ps_strdup.c \
+ps_strlen.c \
+ps_substr.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -27,6 +33,9 @@ $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
+
+clean:
+	rm -rf $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
