@@ -50,3 +50,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignore ./push_swap
+*
+
+# Ignore anything that is not a: directory, source, and header file
+!*/
+!*.c
+!*.h

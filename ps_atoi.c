@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:48:34 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/12 11:38:32 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/14 20:44:17 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ps_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		nbr = ((nbr * 10) + (*str - '0'));
-		if (nbr > LLONG_MAX && sign == -1)
+		if (nbr > INT_MAX && sign == -1)
 			return (0);
-		if (nbr > LLONG_MAX)
+		if (nbr > INT_MAX)
 			return (-1);
 		str++;
 	}

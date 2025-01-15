@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:16:55 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/13 11:31:27 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/14 20:49:25 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@
 // 	}
 // }
 
-int	main(void)
-{
-	char	s[30] = "Hello world! I am Carl Castro.";
-	char	**split = NULL;
-	int		i = 0;
+// int	main(void)
+// {
+// 	char	s[30] = "Hello world! I am Carl Castro.";
+// 	char	**split = NULL;
+// 	int		i = 0;
 
-	split = ps_split(s, ' ');
-	printf("%s\n", *split);
-	while (split[i])
-	{
-		printf("%s\n", *split);
-		split = ps_split(s, ' ');
-		i++;	
-	}
-}
+// 	split = ps_split(s, ' ');
+// 	printf("%s\n", *split);
+// 	while (split[i])
+// 	{
+// 		printf("%s\n", *split);
+// 		split = ps_split(s, ' ');
+// 		i++;	
+// 	}
+// }
