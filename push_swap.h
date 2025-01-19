@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:12:16 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/13 11:19:48 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/16 12:15:25 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 # include <stdio.h>
 # include <string.h>
+
+typedef struct singly_list
+{
+	char				*content;
+	struct singly_list	*next;
+}						t_singly_list;
 
 int		ps_atoi(const char *str);
 char	**ps_split(char const *s, char c);
