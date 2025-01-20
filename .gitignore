@@ -54,7 +54,8 @@ dkms.conf
 # Ignore ./push_swap
 *
 
-# Ignore anything that is not a: directory, source, and header file
+# Ignore anything that is not a: directory, source, header file, and Makefile
 !*/
 !*.c
 !*.h
+!Makefile
