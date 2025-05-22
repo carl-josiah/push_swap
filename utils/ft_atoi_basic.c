@@ -1,51 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi_basic.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 13:58:39 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 19:34:51 by ccastro          ###   ########.fr       */
+/*   Created: 2024/07/10 14:48:34 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/22 19:31:57 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
+#include "../inc.h"
 
-int	is_num(char *str)
+int	ft_atoi_basic(const char *str)
 {
-	int	i;
+	int					sign;
+	int					i;
+	unsigned long long	nbr;
 
+	nbr = 0;
+	sign = 1;
 	i = 0;
-	if (is_sign(str[0]))
+	while (is_delim(str[i]))
 		i++;
-	while (str[i])
+	if (is_sign(str[i]))
 	{
-		if (is_sign(str[i]) || is_delim(str[i]) || is_alpha(str[i]))
-			return (0);
-		else if (is_digit(str[i]))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	if (ac <= 2)
-		exit(1);
-	while (i < ac)
-	{
-		if (!is_num(av[i]))
-		{
-			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		}
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (0);
+	while (is_digit(str[i]))
+	{
+		nbr = ((nbr * 10) + (str[i] - '0'));
+		if (sign == -1 && nbr > (unsigned long long)INT_MAX + 1)
+			return (0);
+		if (nbr > INT_MAX)
+			return (-1);
+		i++;
+	}
+	return (nbr * sign);
 }

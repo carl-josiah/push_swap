@@ -1,51 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi_safe.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 13:58:39 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 19:34:51 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 19:15:11 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/22 19:44:26 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
+#include "../inc.h"
 
-int	is_num(char *str)
+int	ft_atoi_safe(const char *str, int *out)
 {
-	int	i;
+	int					i;
+	int					sign;
+	unsigned long long	num;
 
 	i = 0;
-	if (is_sign(str[0]))
+	sign = 1;
+	num = 0;
+	while (is_delim(str[i]))
 		i++;
-	while (str[i])
+	if (is_sign(str[i]))
+		if (str[i++] == '-')
+			sign = -1;
+	while (is_digit(str[i]))
 	{
-		if (is_sign(str[i]) || is_delim(str[i]) || is_alpha(str[i]))
-			return (0);
-		else if (is_digit(str[i]))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	if (ac <= 2)
-		exit(1);
-	while (i < ac)
-	{
-		if (!is_num(av[i]))
-		{
-			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		}
+		num = (num * 10) + (str[i] - '0');
+		if (sign == -1 && num > (unsigned long long)INT_MAX + 1)
+			return (1);
+		else if (num > INT_MAX)
+			return (1);
 		i++;
 	}
+	*out = sign * (int)num;
 	return (0);
 }

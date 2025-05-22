@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:48:34 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 17:50:50 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 18:42:09 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/22 19:48:40 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
+#include <stdio.h>
 
-int ft_atoi(const char *str)
+int	main(void)
 {
-	int		i;
-	int		sign;
-	long	nbr;
+	int		num;
+	char	str[20] = "2147483648";
 
-	i = 0
-	sign = 1;
-	nbr = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = ((nbr * 10) + (str[i] - '0'));
-		i++;
-	}
-	return (sign * nbr);
+	num = 0;
+	printf("atoi: %d\nnum: %d\n", ft_atoi_safe(str, &num), num);
+	return (0);
 }
