@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:48:34 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/14 20:44:17 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/22 17:50:50 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc.h"
 
-int	ps_atoi(const char *str)
+int ft_atoi(const char *str)
 {
-	unsigned long long	nbr;
-	int					sign;
+	int		i;
+	int		sign;
+	long	nbr;
 
-	nbr = 0;
+	i = 0
 	sign = 1;
-	while ((*str >= 9 && *str <= 13) || (*str == 32))
-		str++;
-	if (*str == '+' || *str == '-')
+	nbr = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (*str == '-')
+		if (str[i] == '-')
 			sign = -1;
-		str++;
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nbr = ((nbr * 10) + (*str - '0'));
-		if (nbr > INT_MAX && sign == -1)
-			return (0);
-		if (nbr > INT_MAX)
-			return (-1);
-		str++;
+		nbr = ((nbr * 10) + (str[i] - '0'));
+		i++;
 	}
-	return (nbr * sign);
+	return (sign * nbr);
 }

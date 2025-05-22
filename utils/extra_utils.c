@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_strdup.c                                        :+:      :+:    :+:   */
+/*   extra_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 17:12:21 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/13 11:15:09 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 14:30:34 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/22 14:57:19 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc.h"
 
-char	*ps_strdup(const char *s1)
+int	is_delim(char c)
 {
-	size_t	i;
-	char	*s2;
+	return ((c >= 9 && c <= 13) || c == 32);
+}
 
-	i = -1;
-	s2 = (char *) malloc(sizeof(char) * ps_strlen(s1) + 1);
-	if (s2 == NULL)
-		return (NULL);
-	while (s1[++i])
-		s2[i] = s1[i];
-	s2[i] = '\0';
-	return (s2);
+int	is_sign(char c)
+{
+	return (c == '-' || c == '+');
+}
+
+int	is_alpha(char c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+int	is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
 }

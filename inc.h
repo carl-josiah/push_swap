@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_strlen.c                                        :+:      :+:    :+:   */
+/*   inc.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 16:38:51 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/13 11:15:29 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 13:58:29 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/22 15:08:27 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef INC_H
+# define INC_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
-size_t	ps_strlen(const char *s)
-{
-	size_t	i;
+int	ft_atoi(char *str);
+int	is_delim(char c);
+int	is_sign(char c);
+int	is_alpha(char c);
+int	is_digit(char c);
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#endif
