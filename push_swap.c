@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:58:39 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 19:34:51 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/23 13:55:12 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,58 @@ int	is_num(char *str)
 	return (1);
 }
 
+int	is_dup(t_list *head)
+{
+	t_list	*curr;
+	t_list	*next;
+
+	curr = head;
+	next = curr->next;
+	if (!curr)
+		return (0);
+	while (curr)
+	{
+		next = curr->next;
+		while (next)
+		{
+			if (curr->data == next->data)
+				return (1);
+			next = next->next;
+		}
+		curr = curr->next;
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
-	int	i;
+	int		i;
+	int		value;
+	t_list	*lst;
 
 	i = 1;
+	lst = NULL;
 	if (ac <= 2)
 		exit(1);
 	while (i < ac)
 	{
-		if (!is_num(av[i]))
+		value = 0;
+		if (!is_num(av[i]) || !ft_atoi_safe(av[i], &value))
 		{
 			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
+		lst = ft_lst_add_back(lst, ft_lst_new(value));
 		i++;
+	}
+	if (is_dup(lst))
+	{
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }
+
+// put this function into parsing.c or even split that even more
+// then create more header files to keep it organized then maybe the make file cuz
+// its getting too much

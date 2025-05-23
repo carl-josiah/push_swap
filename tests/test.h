@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inc.h                                              :+:      :+:    :+:   */
+/*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:58:29 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 13:08:30 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/23 14:11:11 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INC_H
-# define INC_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+#ifndef TEST_H
+# define TEST_H
+# include <stdio.h>
 
-typedef struct s_list
-{
-	int				data;
-	struct s_list	*next;
-}					t_list;
-
-int		ft_atoi_basic(const char *str);
-int		ft_atoi_safe(const char *str, int *out);
-int		is_delim(char c);
-int		is_sign(char c);
-int		is_alpha(char c);
-int		is_digit(char c);
-t_list	*ft_lst_new(int nbr);
-t_list	*ft_lst_add_back(t_list *head, t_list *new_node);
-void	print_list(t_list *head); // not included
+void	print_list(t_list *head); 
 
 #endif

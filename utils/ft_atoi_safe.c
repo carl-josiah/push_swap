@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:15:11 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 19:44:26 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/23 12:38:01 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	ft_atoi_safe(const char *str, int *out)
 	{
 		num = (num * 10) + (str[i] - '0');
 		if (sign == -1 && num > (unsigned long long)INT_MAX + 1)
-			return (1);
+			return (0);
 		else if (num > INT_MAX)
-			return (1);
+			return (0);
 		i++;
 	}
 	*out = sign * (int)num;
-	return (0);
+	return (1);
 }

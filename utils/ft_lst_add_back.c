@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_lst_add_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 18:42:09 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/22 19:48:40 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/23 11:40:23 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/23 13:03:42 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
-#include <stdio.h>
+#include "../inc.h"
 
-int	main(void)
+t_list	*ft_lst_add_back(t_list *head, t_list *new_node)
 {
-	int		num;
-	char	str[20] = "2147483648";
+	t_list	*curr;
 
-	num = 0;
-	printf("atoi: %d\nnum: %d\n", ft_atoi_safe(str, &num), num);
-	return (0);
+	curr = head;
+	if (!head)
+		return (new_node);
+	while (curr->next)
+		curr = curr->next;
+	curr->next = new_node;
+	return (head);
 }
