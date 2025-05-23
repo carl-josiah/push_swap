@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:58:29 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 13:08:30 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/23 14:57:04 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		is_alpha(char c);
 int		is_digit(char c);
 t_list	*ft_lst_new(int nbr);
 t_list	*ft_lst_add_back(t_list *head, t_list *new_node);
-void	print_list(t_list *head); // not included
+void	ft_free_lst(t_list *lst);
+t_list	*parsing(int ac, char **av);
 
 #endif

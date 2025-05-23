@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free_lst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 13:58:39 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 14:45:19 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/23 14:45:45 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/23 14:56:20 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
+#include "../inc.h"
 
-int	main(int ac, char **av)
+void	ft_free_lst(t_list *lst)
 {
-	t_list	*lst;
+	t_list	*curr;
+	t_list	*temp;
 
-	lst = NULL;
-	if (ac <= 2)
-		exit(EXIT_FAILURE);
-	lst = parsing(ac, av);
-	if (!lst)
+	curr = lst;
+	temp = NULL;
+	while (curr)
 	{
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
+		temp = curr;
+		curr = curr->next;
+		free(temp);
 	}
-	return (0);
 }
