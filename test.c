@@ -4,6 +4,6 @@
 int	main(int ac, char **av)
 {
 	(void) ac;
-	printf("%zu\n", clean_strlen(av[1]));
+	printf("%s\n", clean_joined_str(av[1]));
 	return (0);
 }

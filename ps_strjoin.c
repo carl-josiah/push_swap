@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:33:46 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 19:59:09 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/24 21:49:07 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ps_strjoin(int ac, char **av)
 	joined = malloc(sizeof(char) * (arg_len + (ac - 1) + 1));
 	if (!joined)
 		return (ps_strdup(""));
-	while (av[i])
+	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j])
