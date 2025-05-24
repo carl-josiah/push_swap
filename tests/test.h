@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:58:29 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 14:11:11 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/24 16:06:59 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 # define TEST_H
 # include <stdio.h>
 
-void	print_list(t_list *head); 
+void	print_list(t_list *head);
 
 #endif

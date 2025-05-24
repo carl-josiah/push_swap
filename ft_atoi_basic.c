@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utilties.c                                         :+:      :+:    :+:   */
+/*   ft_atoi_basic.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 15:48:03 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 15:48:30 by ccastro          ###   ########.fr       */
+/*   Created: 2024/07/10 14:48:34 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
 
-int	ft_atoi_safe(const char *str, int *out)
+int	ft_atoi_basic(const char *str)
 {
-	int					i;
 	int					sign;
-	unsigned long long	num;
+	int					i;
+	unsigned long long	nbr;
 
-	i = 0;
+	nbr = 0;
 	sign = 1;
-	num = 0;
+	i = 0;
 	while (is_delim(str[i]))
 		i++;
 	if (is_sign(str[i]))
-		if (str[i++] == '-')
-			sign = -1;
-	while (is_digit(str[i]))
 	{
-		num = (num * 10) + (str[i] - '0');
-		if (sign == -1 && num > (unsigned long long)INT_MAX + 1)
-			return (0);
-		else if (num > INT_MAX)
-			return (0);
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	*out = sign * (int)num;
-	return (1);
+	while (is_digit(str[i]))
+	{
+		nbr = ((nbr * 10) + (str[i] - '0'));
+		if (sign == -1 && nbr > (unsigned long long)INT_MAX + 1)
+			return (0);
+		if (nbr > INT_MAX)
+			return (-1);
+		i++;
+	}
+	return (nbr * sign);
 }

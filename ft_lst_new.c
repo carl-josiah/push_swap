@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_add_back.c                                  :+:      :+:    :+:   */
+/*   ft_lst_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 11:40:23 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 13:03:42 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/23 11:29:49 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
 
-t_list	*ft_lst_add_back(t_list *head, t_list *new_node)
+t_list	*ft_lst_new(int nbr)
 {
-	t_list	*curr;
+	t_list	*new_node;
 
-	curr = head;
-	if (!head)
-		return (new_node);
-	while (curr->next)
-		curr = curr->next;
-	curr->next = new_node;
-	return (head);
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->data = nbr;
+	new_node->next = NULL;
+	return (new_node);
 }

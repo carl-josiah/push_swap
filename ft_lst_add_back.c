@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_lst.c                                      :+:      :+:    :+:   */
+/*   ft_lst_add_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 14:45:45 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 14:56:20 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/23 11:40:23 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
 
-void	ft_free_lst(t_list *lst)
+t_list	*ft_lst_add_back(t_list *head, t_list *new_node)
 {
 	t_list	*curr;
-	t_list	*temp;
 
-	curr = lst;
-	temp = NULL;
-	while (curr)
-	{
-		temp = curr;
+	curr = head;
+	if (!head)
+		return (new_node);
+	while (curr->next)
 		curr = curr->next;
-		free(temp);
-	}
+	curr->next = new_node;
+	return (head);
 }

@@ -6,11 +6,11 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:15:11 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 15:54:43 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
 
 /*
 int	ft_atoi_safe(const char *str, int *out)

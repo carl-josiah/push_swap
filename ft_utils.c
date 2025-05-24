@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_new.c                                       :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 11:29:49 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/23 12:12:03 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 14:30:34 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc.h"
+#include "inc.h"
 
-t_list	*ft_lst_new(int nbr)
+int	is_delim(char c)
 {
-	t_list	*new_node;
+	return ((c >= 9 && c <= 13) || c == 32);
+}
 
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->data = nbr;
-	new_node->next = NULL;
-	return (new_node);
+int	is_sign(char c)
+{
+	return (c == '-' || c == '+');
+}
+
+int	is_alpha(char c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+int	is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
 }
