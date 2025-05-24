@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_lst.c                                      :+:      :+:    :+:   */
+/*   ps_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 14:45:45 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 16:01:54 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/24 19:04:47 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 19:07:07 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
+#include "push_swap.h"
 
-void	ft_free_lst(t_list *lst)
+char	*ps_strdup(char *str)
 {
-	t_list	*curr;
-	t_list	*temp;
+	size_t	i;
+	char	*dup;
 
-	curr = lst;
-	temp = NULL;
-	while (curr)
+	i = 0;
+	dup = malloc(sizeof(char) * (ps_strlen(str) + 1));
+	if (!dup)
+		return (NULL);
+	while (str[i])
 	{
-		temp = curr;
-		curr = curr->next;
-		free(temp);
+		dup[i] = str[i];
+		i++;
 	}
+	return (dup);
 }

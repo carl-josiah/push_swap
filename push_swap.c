@@ -5,30 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 13:58:39 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 16:05:40 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/24 19:51:55 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc.h"
-#include <stdio.h>
+#include "push_swap.h"
+#include "test.h"
 
 int	main(int ac, char **av)
 {
-	t_list	*lst;
+	char	*joined_str;
+	char	*clean_str;
 
-	lst = NULL;
-	if (ac <= 2)
+	if (ac > 1)
 	{
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
+		joined_str = ps_strjoin(ac - PROGRAM_NAME, av + AFTER_PROGRAM_NAME);
+		if (!joined_str)
+			exit(EXIT_FAILURE);
+		clean_str = clean_joined_str(joined_str);
+		if (!clean_str)
+		{
+			free(joined_str);
+			exit(EXIT_FAILURE);
+		}
+		printf("joined: %s\n", joined_str);
+		printf("clean: %s\n", clean_str);
 	}
-	lst = parsing(ac, av);
-	if (!lst)
-	{
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
-	ft_free_lst(lst);
-	return (0);
+	return (EXIT_SUCCESS);
 }
