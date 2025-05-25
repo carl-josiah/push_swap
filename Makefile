@@ -1,36 +1,82 @@
-NAME = push_swap
+NAME	= push_swap
 
-CC = cc
+CC		= cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
-SRCS = clean_joined_str.c \
-free_words.c \
-micro_utils.c \
-parsing_utils.c \
-parsing.c \
-ps_split.c \
-ps_strdup.c \
-ps_strjoin.c \
-ps_strlen.c \
-push_swap.c \
+SRCS	= clean_joined_str.c \
+		free_words.c \
+		micro_utils.c \
+		parsing_utils.c \
+		parsing.c \
+		ps_split.c \
+		ps_strdup.c \
+		ps_strjoin.c \
+		ps_strlen.c \
+		push_swap.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS	= $(SRCS:.c=.o)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) entry
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean: clean exit
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re entry exit
+
+entry:
+	@echo "\033[1;37m ██▓    ▄▄▄       █    ██  ███▄    █  ▄████▄   ██░ ██  ██▓ ███▄    █   ▄████ "
+	@echo "▓██▒   ▒████▄     ██  ▓██▒ ██ ▀█   █ ▒██▀ ▀█  ▓██░ ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒"
+	@echo "▒██░   ▒██  ▀█▄  ▓██  ▒██░▓██  ▀█ ██▒▒▓█    ▄ ▒██▀▀██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░"
+	@echo "▒██░   ░██▄▄▄▄██ ▓▓█  ░██░▓██▒  ▐▌██▒▒▓▓▄ ▄██▒░▓█ ░██ ░██░▓██▒  ▐▌██▒░▓█  ██▓"
+	@echo "░██████▒▓█   ▓██▒▒▒█████▓ ▒██░   ▓██░▒ ▓███▀ ░░▓█▒░██▓░██░▒██░   ▓██░░▒▓███▀▒"
+	@echo "\033[1;31m░ ▒░▓  ░▒▒   ▓▒█░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒ ░ ░▒ ▒  ░ ▒ ░░▒░▒░▓  ░ ▒░   ▒ ▒  ░▒   ▒ "
+	@echo "░ ░ ▒  ░ ▒   ▒▒ ░░░▒░ ░ ░ ░ ░░   ░ ▒░  ░  ▒    ▒ ░▒░ ░ ▒ ░░ ░░   ░ ▒░  ░   ░ "
+	@echo "  ░ ░    ░   ▒    ░░░ ░ ░    ░   ░ ░ ░         ░  ░░ ░ ▒ ░   ░   ░ ░ ░ ░   ░ "
+	@echo "    ░  ░     ░  ░   ░              ░ ░ ░       ░  ░  ░ ░           ░       ░ "
+	@echo "                                     ░                                       "
+	@echo "\033[1;31m ██▀███   ▄▄▄      ▓█████▄  ██▓▒██   ██▒ ▐██▌                                "
+	@echo "▓██ ▒ ██▒▒████▄    ▒██▀ ██▌▓██▒▒▒ █ █ ▒░ ▐██▌                                "
+	@echo "▓██ ░▄█ ▒▒██  ▀█▄  ░██   █▌▒██▒░░  █   ░ ▐██▌                                "
+	@echo "▒██▀▀█▄  ░██▄▄▄▄██ ░▓█▄   ▌░██░ ░ █ █ ▒  ▓██▒                                "
+	@echo "░██▓ ▒██▒ ▓█   ▓██▒░▒████▓ ░██░▒██▒ ▒██▒ ▒▄▄                                 "
+	@echo "░ ▒▓ ░▒▓░ ▒▒   ▓▒█░ ▒▒▓  ▒ ░▓  ▒▒ ░ ░▓ ░ ░▀▀▒                                "
+	@echo "  ░▒ ░ ▒░  ▒   ▒▒ ░ ░ ▒  ▒  ▒ ░░░   ░▒ ░ ░  ░                                "
+	@echo "  ░░   ░   ░   ▒    ░ ░  ░  ▒ ░ ░    ░      ░                                "
+	@echo "   ░           ░  ░   ░     ░   ░    ░   ░                                   "
+	@echo "                    ░                                                        "
+	@echo "\033[0m"
+
+exit:
+	@echo "\033[1;37m ██▓     ▒█████   ██▒   █▓▓█████        "
+	@echo "▓██▒    ▒██▒  ██▒▓██░   █▒▓█   ▀        "
+	@echo "▒██░    ▒██░  ██▒ ▓██  █▒░▒███          "
+	@echo "▒██░    ▒██   ██░  ▒██ █░░▒▓█  ▄        "
+	@echo "░██████▒░ ████▓▒░   ▒▀█░  ░▒████▒ ██▓   "
+	@echo "\033[1;31m░ ▒░▓  ░░ ▒░▒░▒░    ░ ▐░  ░░ ▒░ ░ ▒▓▒   "
+	@echo "░ ░ ▒  ░  ░ ▒ ▒░    ░ ░░   ░ ░  ░ ░▒    "
+	@echo "  ░ ░   ░ ░ ░ ▒       ░░     ░    ░     "
+	@echo "    ░  ░    ░ ░        ░     ░  ░  ░    "
+	@echo "                      ░            ░    "
+	@echo " ██▀███   ▄▄▄      ▓█████▄  ██▓▒██   ██▒"
+	@echo "▓██ ▒ ██▒▒████▄    ▒██▀ ██▌▓██▒▒▒ █ █ ▒░"
+	@echo "▓██ ░▄█ ▒▒██  ▀█▄  ░██   █▌▒██▒░░  █   ░"
+	@echo "▒██▀▀█▄  ░██▄▄▄▄██ ░▓█▄   ▌░██░ ░ █ █ ▒ "
+	@echo "░██▓ ▒██▒ ▓█   ▓██▒░▒████▓ ░██░▒██▒ ▒██▒"
+	@echo "░ ▒▓ ░▒▓░ ▒▒   ▓▒█░ ▒▒▓  ▒ ░▓  ▒▒ ░ ░▓ ░"
+	@echo "  ░▒ ░ ▒░  ▒   ▒▒ ░ ░ ▒  ▒  ▒ ░░░   ░▒ ░"
+	@echo "  ░░   ░   ░   ▒    ░ ░  ░  ▒ ░ ░    ░  "
+	@echo "   ░           ░  ░   ░     ░   ░    ░  "
+	@echo "                    ░                  "
+	@echo "\033[0m"
