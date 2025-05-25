@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:04:47 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 19:07:07 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 13:46:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ps_strdup(char *str)
 		dup[i] = str[i];
 		i++;
 	}
+	dup[i] = '\0';;
 	return (dup);
 }

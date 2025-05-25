@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:42:25 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 19:19:13 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 13:30:51 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 # include <stdio.h>
 
 size_t	clean_strlen(char *joined_str);
+size_t	count_arg_len(char **av);
 
 #endif

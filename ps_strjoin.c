@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:33:46 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 21:49:07 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 13:45:50 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ char	*ps_strjoin(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 			joined[k++] = av[i][j++];
-		joined[k++] = ' ';
+		if (i < ac - 1)
+			joined[k++] = ' ';
 		i++;
 	}
 	joined[k] = '\0';
