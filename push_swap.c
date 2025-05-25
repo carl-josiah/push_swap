@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 13:54:46 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 14:21:54 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,28 +31,31 @@ char	*parse_args(int ac, char **av)
 	return (clean_str);
 }
 
-// int	is_valid(char *clean_str)
-// {
-// 	size_t	i;
+int	is_valid(char *clean_str)
+{
+	size_t	i;
 
-// 	i = 0;
-// 	while (clean_str[i])
-// 	{
-// 		while (is_delim(clean_str[i]))
-// 			i++;
-// 		if (!(is_sign(clean_str[i]) || is_digit(clean_str[i])))
-// 			return (0);
-// 		else if (is_sign(clean_str[i]) && clean_str[i + 1] != '\0')
-// 		{
-// 			i++;
-// 			if (!is_digit(clean_str[i]))
-// 				return (0);
-// 		}
-// 		if (is_digit(clean_str[i]) || is_delim(clean_str[i]))
-// 			i++;
-// 	}
-// 	return (1);
-// }
+	i = 0;
+	while (clean_str[i])
+	{
+		if (is_sign(clean_str[i]))
+		{
+			if (clean_str[i + 1] == '\0' || !is_digit(clean_str[i + 1]))
+				return (0);
+			i++;
+		}
+		if (is_digit(clean_str[i]))
+		{
+			while (clean_str[i] && is_digit(clean_str[i]))
+				i++;
+		}
+		else if (is_delim(clean_str[i]))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
 
 int	main(int ac, char **av)
 {
@@ -63,11 +66,11 @@ int	main(int ac, char **av)
 		clean_str = parse_args(ac, av);
 		if (!clean_str)
 			exit(EXIT_FAILURE);
+		printf("%s\n", clean_str);
 		if (is_valid(clean_str))
 		{
 			printf("valid!!!\n");
 		}
-		printf("%s\n", clean_str);
 		free(clean_str);
 	}
 	return (EXIT_SUCCESS);
