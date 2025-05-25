@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   free_words.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 16:50:58 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 16:51:00 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/25 18:41:01 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/25 18:41:07 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "test.h"
 
-int	main(int ac, char **av)
+void	free_words(char **words)
 {
-	char	*str;
+	size_t	i;
 
-	str = clean_joined_str(av[1]);
-	(void) ac;
-	printf("%s\n", str);
-	free(str);
-	return (0);
+	if (!words)
+		return ;
+	i = 0;
+	while (words[i])
+		free(words[i++]);
+	free(words);
 }
