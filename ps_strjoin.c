@@ -6,12 +6,11 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:33:46 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 18:31:41 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 18:45:45 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "test.h"
 
 size_t	count_arg_len(char **av)
 {
