@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 20:53:03 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 13:54:18 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ int		is_delim(char c);
 char	*ps_strdup(char *str);
 int		is_sign(char c);
 int		is_digit(char c);
-int	is_alpha(char c);
 
 #endif

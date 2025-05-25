@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 13:50:51 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/25 13:54:46 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	main(int ac, char **av)
 		clean_str = parse_args(ac, av);
 		if (!clean_str)
 			exit(EXIT_FAILURE);
-		// if (is_valid(clean_str))
-		// {
-		// 	printf("valid!!!\n");
-		// }
+		if (is_valid(clean_str))
+		{
+			printf("valid!!!\n");
+		}
 		printf("%s\n", clean_str);
 		free(clean_str);
 	}
