@@ -1,0 +1,33 @@
+Variables in a Makefile are like shortcuts or labels for values you don’t want to repeat.
+They're written like this:
+
+NAME = push_swap
+SRCS = main.c utils.c
+_______________________________________________________________________________________________________
+Then later, you can use them like this:
+
+$(NAME)
+$(SRCS)
+_______________________________________________________________________________________________________
+“To build this (target), I need these (dependencies), and here’s how to do it (commands).”
+
+target: dependencies
+	commands to build the target
+
+%.o=%.c
+	$(CC) $(CFLAGS) -c $@ -o @<
+
+$@ = target
+$< = dependencies
+
+-c means "compile only, don’t link"
+It turns a .c file into a .o file (object file)
+Use it when you want to compile files separately
+
+-o means "output file name"
+It lets you choose the name of the file gcc makes (like main.o or program)
+
+Usually in Makefiles:
+  compile with -c and -o to get .o files
+  then link all .o files to make the final program
+_______________________________________________________________________________________________________
