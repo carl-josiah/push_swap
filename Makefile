@@ -17,8 +17,11 @@ push_swap.c \
 
 OBJS = $(SRCS:.c=.o)
 
-%.o=%.c
-	$(CC) $(CFLAGS) -c $@ -o $<
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
