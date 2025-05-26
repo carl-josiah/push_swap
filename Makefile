@@ -5,7 +5,7 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
 SRCS	= clean_joined_str.c \
-		free_words.c \
+		free_strs.c \
 		micro_utils.c \
 		parsing_utils.c \
 		parsing.c \
@@ -14,6 +14,7 @@ SRCS	= clean_joined_str.c \
 		ps_strjoin.c \
 		ps_strlen.c \
 		push_swap.c \
+		ps_atoi_safe.c \
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -26,6 +27,7 @@ $(NAME): $(OBJS) entry
 all: $(NAME)
 
 clean:
+	@echo "cleaning objects..."
 	@rm -f $(OBJS)
 
 fclean: clean exit

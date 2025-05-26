@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 14:50:33 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 18:20:44 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/26 21:11:58 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	**ps_split(char *clean_str)
 		{
 			words[j] = extract_word(clean_str, &i);
 			if (!words[j])
-				return (free_words(words), NULL);
+				return (free_strs(words), NULL);
 			j++;
 		}
 		else

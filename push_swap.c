@@ -6,33 +6,56 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 18:43:02 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/26 21:36:58 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// int	main(int ac, char **av)
+// {
+// 	char	**strs;
+// 	int		*numbers;
+// 	int		processed;
+// 	int		converted;
+
+// 	strs = NULL;
+// 	numbers = NULL;
+// 	converted = 0;
+// 	processed = get_arr_strs(ac, av, &strs);
+// 	if (!strs)
+// 		return (processed);
+// 	converted = convert_strs_to_ints(strs, &numbers);
+// 	if (!converted)
+// 	{
+// 		processed = 0;
+// 		write(1, "Error\n", 6);
+// 	}
+// 	else if (converted > 0)
+// 	{
+// 		if (is_dup(numbers, converted))
+// 		{
+// 			processed = 0;
+// 			write(1, "Error\n", 6);
+// 		}
+// 	}
+// 	return (free_strs(strs), free(numbers), processed);
+// }
+
 int	main(int ac, char **av)
 {
-	char	*clean_str;
-	char	**words;
+	int	*numbers;
+	int	count;
 
-	clean_str = NULL;
-	words = NULL;
 	if (ac > 1)
 	{
-		clean_str = parse_args(ac, av);
-		if (!clean_str)
-			return (EXIT_FAILURE);
-		if (!is_all_delim(clean_str) && is_all_valid(clean_str))
+		numbers = NULL;
+		count = process_and_validate(ac, av, &numbers);
+		if (!count)
 		{
-			words = ps_split(clean_str);
-			if (!words)
-				return (free_words(words), free(clean_str), EXIT_FAILURE);
-			write(1, "Valid\n", 6);
+			write(1, "Error\n", 6);
+			return (EXIT_FAILURE);
 		}
-		else
-			write(2, "Error\n", 6);
 	}
-	return (free(clean_str), free_words(words), EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }

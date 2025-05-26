@@ -31,3 +31,5 @@ Usually in Makefiles:
   compile with -c and -o to get .o files
   then link all .o files to make the final program
 _______________________________________________________________________________________________________
+char **str means you already have an array of strings somewhere and just want to use it — you’re passing a pointer to that existing array.
+int **num_out means you want the function to create or change the pointer itself (make it point somewhere new), so you pass a pointer to the pointer.

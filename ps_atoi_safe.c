@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_words.c                                       :+:      :+:    :+:   */
+/*   ft_atoi_safe.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 18:41:01 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 18:41:07 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/22 19:15:11 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/26 15:13:59 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_words(char **words)
+int	ps_atoi_safe(const char *str, int *out)
 {
-	size_t	i;
+	int					i;
+	int					sign;
+	unsigned long long	num;
 
-	if (!words)
-		return ;
 	i = 0;
-	while (words[i])
-		free(words[i++]);
-	free(words);
+	sign = 1;
+	num = 0;
+	while (is_delim(str[i]))
+		i++;
+	if (is_sign(str[i]))
+		if (str[i++] == '-')
+			sign = -1;
+	while (is_digit(str[i]))
+	{
+		num = (num * 10) + (str[i] - '0');
+		if (sign == -1 && num > (unsigned long long)INT_MAX + 1)
+			return (0);
+		else if (num > INT_MAX)
+			return (0);
+		i++;
+	}
+	*out = sign * (int)num;
+	return (1);
 }

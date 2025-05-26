@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 17:29:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/24 19:54:36 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/26 16:57:47 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	clean_strlen(char *joined_str)
 	i = 0;
 	len = 0;
 	while (joined_str[i] && is_delim(joined_str[i]))
-			i++;
+		i++;
 	while (joined_str[i])
 	{
 		if (!is_delim(joined_str[i]))

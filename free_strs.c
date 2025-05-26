@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_strlen.c                                        :+:      :+:    :+:   */
+/*   free_strs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 16:37:25 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/26 14:40:58 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/25 18:41:01 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/25 18:41:07 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ps_strlen(char *str)
+void	free_strs(char **strs)
 {
 	size_t	i;
 
+	if (!strs)
+		return ;
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
 }

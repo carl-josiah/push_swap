@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 18:10:23 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 18:41:59 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/26 20:31:26 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,34 @@ int	is_all_valid(char *clean_str)
 			return (0);
 	}
 	return (1);
+}
+
+size_t	count_arr_strs(char **strs)
+{
+	size_t	i;
+
+	i = 0;
+	while (strs[i])
+		i++;
+	return (i);
+}
+
+int	is_dup(int *numbers, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i <= len - 1)
+	{
+		j = i + 1;
+		while (j <= (len - 1))
+		{
+			if (numbers[i] == numbers[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
