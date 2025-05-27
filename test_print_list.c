@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   test_print_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 16:42:25 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 16:46:21 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/27 16:43:03 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/27 16:45:18 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
-# include <stdio.h>
+#include "push_swap.h"
+#include "test.h"
 
-void	test_print_list(t_list *head);
+void	test_print_list(t_list *head)
+{
+	t_list	*curr;
 
-#endif
+	curr = head;
+	while (curr)
+	{
+		printf("%d\n", curr->data);
+		curr = curr->next;
+	}
+}

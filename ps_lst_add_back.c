@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   ps_lst_add_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 16:42:25 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 16:46:21 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/27 14:27:44 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/27 15:41:39 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
-# include <stdio.h>
+#include "push_swap.h"
 
-void	test_print_list(t_list *head);
+void	ps_lst_add_back(t_list **lst, t_list *node)
+{
+	t_list	*curr;
 
-#endif
+	curr = *lst;
+	if (!curr)
+		*lst = node;
+	while (curr != NULL)
+	{
+		if (curr->next == NULL)
+		{
+			curr->next = node;
+			return ;
+		}
+		curr = curr->next;
+	}
+}

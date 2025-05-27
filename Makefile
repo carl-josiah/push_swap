@@ -15,15 +15,17 @@ SRCS	= clean_joined_str.c \
 		ps_strlen.c \
 		push_swap.c \
 		ps_atoi_safe.c \
-		ft_lst_new.c \
-		ft_lst_add_back.c \
+		ps_lst_new.c \
+		ps_lst_add_back.c \
+		init_list.c \
+		free_list.c
 
 OBJS	= $(SRCS:.c=.o)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS) entry
+$(NAME): $(OBJS) entry_banner
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
@@ -32,14 +34,14 @@ clean:
 	@echo "cleaning objects..."
 	@rm -f $(OBJS)
 
-fclean: clean exit
+fclean: clean exit_banner
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re entry exit
+.PHONY: all clean fclean re entry_banner exit_banner
 
-entry:
+entry_banner:
 	@echo "\033[1;37m ██▓    ▄▄▄       █    ██  ███▄    █  ▄████▄   ██░ ██  ██▓ ███▄    █   ▄████ "
 	@echo "▓██▒   ▒████▄     ██  ▓██▒ ██ ▀█   █ ▒██▀ ▀█  ▓██░ ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒"
 	@echo "▒██░   ▒██  ▀█▄  ▓██  ▒██░▓██  ▀█ ██▒▒▓█    ▄ ▒██▀▀██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░"
@@ -62,7 +64,7 @@ entry:
 	@echo "                    ░                                                        "
 	@echo "\033[0m"
 
-exit:
+exit_banner:
 	@echo "\033[1;37m ██▓     ▒█████   ██▒   █▓▓█████        "
 	@echo "▓██▒    ▒██▒  ██▒▓██░   █▒▓█   ▀        "
 	@echo "▒██░    ▒██░  ██▒ ▓██  █▒░▒███          "

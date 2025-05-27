@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 14:34:20 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 16:43:59 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ size_t	count_arr_strs(char **strs);
 int		convert_strs_to_ints(char **strs, int **num_out);
 int		is_dup(int *numbers, int len);
 int		process_and_validate(int ac, char **av, int **numbers_out);
-t_list	*ft_lst_new(int nbr);
-void	ft_lst_add_back(t_list **lst, t_list *node);
-
+int		arr_to_list(int *num, int count, t_list **list);
+t_list	*ps_lst_new(int nbr);
+void	ps_lst_add_back(t_list **lst, t_list *node);
+void	free_list(t_list *head);
 #endif
