@@ -15,6 +15,8 @@ SRCS	= clean_joined_str.c \
 		ps_strlen.c \
 		push_swap.c \
 		ps_atoi_safe.c \
+		ft_lst_new.c \
+		ft_lst_add_back.c \
 
 OBJS	= $(SRCS:.c=.o)
 
