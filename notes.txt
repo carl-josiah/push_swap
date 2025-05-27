@@ -33,3 +33,8 @@ Usually in Makefiles:
 _______________________________________________________________________________________________________
 char **str means you already have an array of strings somewhere and just want to use it — you’re passing a pointer to that existing array.
 int **num_out means you want the function to create or change the pointer itself (make it point somewhere new), so you pass a pointer to the pointer.
+
+_______________________________________________________________________________________________________
+jot -r 500 -100000000000000000000000000000000000000000000000
+00000000000000000000000 10000000000000000000000000000000000
+000000000000000000000000000000000000 | tr '\n' ' ' | ./push_swap

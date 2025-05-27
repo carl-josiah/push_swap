@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 14:36:08 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 15:20:39 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int ac, char **av)
 	int	*numbers;
 	int	count;
 
+	numbers = NULL;
 	if (ac > 1)
 	{
-		numbers = NULL;
 		count = process_and_validate(ac, av, &numbers);
 		if (!count)
 		{
@@ -27,5 +27,5 @@ int	main(int ac, char **av)
 			return (free(numbers), EXIT_FAILURE);
 		}
 	}
-	return (EXIT_SUCCESS);
+	return (free(numbers), EXIT_SUCCESS);
 }
