@@ -22,6 +22,9 @@ SRCS	= clean_joined_str.c \
 		ps_lst_size.c \
 		sort_stack.c \
 		swap.c \
+		push.c \
+		rotate.c \
+		reverse_rotate.c \
 
 OBJS	= $(SRCS:.c=.o)
 

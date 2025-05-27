@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 20:00:37 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 19:41:51 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,16 @@ void	ps_lst_add_back(t_list **lst, t_list *node);
 size_t	ps_lst_size(t_list *head);
 void	free_list(t_list *head);
 int		sort_stack(t_list *list_of_num);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	rb(t_stack *b);
+void	ra(t_stack *a);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif
