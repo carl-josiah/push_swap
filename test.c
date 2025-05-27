@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:50:58 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/25 16:51:00 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 14:14:21 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,5 @@
 
 int	main(int ac, char **av)
 {
-	char	*str;
-
-	str = clean_joined_str(av[1]);
-	(void) ac;
-	printf("%s\n", str);
-	free(str);
 	return (0);
 }
