@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 16:43:59 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 20:00:37 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct s_list
 	int				data;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_stack
+{
+	t_list	*head;
+	size_t	size;
+}			t_stack;
 
 int		is_delim(char c);
 int		is_sign(char c);
@@ -45,5 +51,8 @@ int		process_and_validate(int ac, char **av, int **numbers_out);
 int		arr_to_list(int *num, int count, t_list **list);
 t_list	*ps_lst_new(int nbr);
 void	ps_lst_add_back(t_list **lst, t_list *node);
+size_t	ps_lst_size(t_list *head);
 void	free_list(t_list *head);
+int		sort_stack(t_list *list_of_num);
+
 #endif

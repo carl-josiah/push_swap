@@ -18,7 +18,10 @@ SRCS	= clean_joined_str.c \
 		ps_lst_new.c \
 		ps_lst_add_back.c \
 		init_list.c \
-		free_list.c
+		free_list.c \
+		ps_lst_size.c \
+		sort_stack.c \
+		swap.c \
 
 OBJS	= $(SRCS:.c=.o)
 

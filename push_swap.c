@@ -6,17 +6,23 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 17:04:05 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 20:09:12 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "test.h"
 
-int	write_error_and_free_numbers(int *numbers)
+int	error_and_free_numbers(int *num)
 {
 	write(1, "Error\n", 6);
-	return (free(numbers), 1);
+	return (free(num), 1);
+}
+
+int	error_and_cleanup(int *num, t_list *list_of_num)
+{
+	write(1, "Error\n", 6);
+	return (free(num), free_list(list_of_num), 1);
 }
 
 int	main(int ac, char **av)
@@ -24,6 +30,7 @@ int	main(int ac, char **av)
 	int		*numbers;
 	int		count;
 	int		valid;
+	int		sorted;
 	t_list	*list_of_num;
 
 	numbers = NULL;
@@ -32,10 +39,13 @@ int	main(int ac, char **av)
 	{
 		count = process_and_validate(ac, av, &numbers);
 		if (!count)
-			return (write_error_and_free_numbers(numbers));
+			return (error_and_free_numbers(numbers));
 		valid = arr_to_list(numbers, count, &list_of_num);
 		if (!valid)
-			return (write_error_and_free_numbers(numbers));
+			return (error_and_free_numbers(numbers));
+		sorted = sort_stack(list_of_num);
+		if (!sorted)
+			return (error_and_cleanup(numbers, list_of_num));
 	}
 	return (free(numbers), free_list(list_of_num), EXIT_SUCCESS);
 }
