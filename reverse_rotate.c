@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:24 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 19:37:36 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 19:44:48 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	rrr(t_stack *a, t_stack *b)
 	reverse_rotate(b);
 	write(1, "rrr\n", 4);
 }
-
