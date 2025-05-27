@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 13:40:16 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/27 14:36:08 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 		if (!count)
 		{
 			write(1, "Error\n", 6);
-			return (EXIT_FAILURE);
+			return (free(numbers), EXIT_FAILURE);
 		}
 	}
 	return (EXIT_SUCCESS);
