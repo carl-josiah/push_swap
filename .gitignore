@@ -63,3 +63,5 @@ dkms.conf
 !test_cases.sh
 !checker_Mac
 !notes.txt
+!test_sort.sh
+!test_crazy_sort.sh

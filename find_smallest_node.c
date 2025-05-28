@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   find_smallest_node.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 19:14:21 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 17:41:10 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/28 17:12:07 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/28 17:12:13 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *a, t_stack *b, t_list *list_of_num)
+t_list	*find_smallest_node(t_stack *a)
 {
-	a->head = list_of_num;
-	a->size = ps_lst_size(list_of_num);
-	b->head = NULL;
-	b->size = 0;
-}
+	t_list	*curr;
+	t_list	*smallest;
 
-int	sort_stack(t_list *list_of_num)
-{
-	t_stack	a;
-	t_stack	b;
-
-	init_stack(&a, &b, list_of_num);
-	if (a.size == 2)
-		sort_2(&a);
-	else if (a.size == 3)
-		sort_3(&a);
-	else if (a.size == 4)
-		sort_4(&a, &b);
-	else if (a.size == 5)
-		sort_5(&a, &b);
-	return (1);
+	curr = a->head;
+	smallest = curr;
+	while (curr != NULL)
+	{
+		if (smallest->data > curr->data)
+			smallest = curr;
+		curr = curr->next;
+	}
+	return (smallest);
 }

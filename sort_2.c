@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   sort_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 19:14:21 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 17:41:10 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/28 15:54:33 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/28 15:56:41 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *a, t_stack *b, t_list *list_of_num)
+void	sort_2(t_stack *a)
 {
-	a->head = list_of_num;
-	a->size = ps_lst_size(list_of_num);
-	b->head = NULL;
-	b->size = 0;
-}
+	int	first;
+	int	second;
 
-int	sort_stack(t_list *list_of_num)
-{
-	t_stack	a;
-	t_stack	b;
-
-	init_stack(&a, &b, list_of_num);
-	if (a.size == 2)
-		sort_2(&a);
-	else if (a.size == 3)
-		sort_3(&a);
-	else if (a.size == 4)
-		sort_4(&a, &b);
-	else if (a.size == 5)
-		sort_5(&a, &b);
-	return (1);
+	if (!a->head || !a->head->next)
+		return ;
+	first = a->head->data;
+	second = a->head->next->data;
+	if (first < second)
+		return ;
+	else if (first > second)
+		sa(a);
 }

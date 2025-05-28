@@ -25,6 +25,13 @@ SRCS	= clean_joined_str.c \
 		push.c \
 		rotate.c \
 		reverse_rotate.c \
+		sort_3.c \
+		sort_2.c \
+		sort_5.c \
+		sort_4.c \
+		find_smallest_node.c \
+		find_smallest_node_index.c \
+		is_sorted_ascending.c \
 
 OBJS	= $(SRCS:.c=.o)
 

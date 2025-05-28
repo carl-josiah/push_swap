@@ -6,12 +6,11 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/27 20:09:12 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/28 17:41:40 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "test.h"
 
 int	error_and_free_numbers(int *num)
 {
