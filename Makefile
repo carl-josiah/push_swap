@@ -32,6 +32,8 @@ SRCS	= clean_joined_str.c \
 		find_smallest_node.c \
 		find_smallest_node_index.c \
 		is_sorted_ascending.c \
+		radix.c \
+		ps_lst_max.c \
 
 OBJS	= $(SRCS:.c=.o)
 

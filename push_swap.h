@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 17:38:31 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/29 18:54:05 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ t_list	*find_smallest_node(t_stack *a);
 size_t	find_smallest_node_index(t_stack *a, t_list *smallest_node);
 void	sort_4(t_stack *a, t_stack *b);
 int		is_sorted_ascending(t_stack *a);
+void	radix(t_stack *a, t_stack *b);
+int		ps_lst_max(t_list *lst, int *max);
 
 #endif
