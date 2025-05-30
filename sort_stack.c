@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:14:21 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/30 16:24:28 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/30 21:45:23 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_stack(t_stack *a, t_stack *b, t_list *list_of_num)
 	b->head = NULL;
 	b->size = 0;
 }
-#include "test.h"
+
 int	sort_stack(t_list *list_of_num)
 {
 	t_stack	a;
@@ -38,7 +38,6 @@ int	sort_stack(t_list *list_of_num)
 		sort_5(&a, &b);
 	else if (a.size > 5)
 		radix(&a, &b, a.size);
-	test_print_list(a.head);
 	free_list(&(a.head));
 	return (1);
 }

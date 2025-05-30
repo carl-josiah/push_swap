@@ -31,11 +31,10 @@ SRCS	= clean_joined_str.c \
 		find_smallest_node.c \
 		find_smallest_node_index.c \
 		is_sorted_ascending.c \
-		radix.c \
 		ps_lst_max.c \
 		free_list.c \
-		\
-		test_print_list.c \
+		radix.c \
+		radix_utils.c
 
 OBJS	= $(SRCS:.c=.o)
 

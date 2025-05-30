@@ -5,64 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/29 18:31:58 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/30 15:57:21 by ccastro          ###   ########.fr       */
+/*   Created: 2025/05/30 21:45:42 by ccastro           #+#    #+#             */
+/*   Updated: 2025/05/30 23:22:51 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	count_bits(int num)
+void	radix(t_stack *a, t_stack *b, size_t size)
 {
-	int	bit_count;
+	int	max;
+	int	passes;
+	int	bit_pos;
+	int	*arr;
 
-	bit_count = 0;
-	while (num >> bit_count)
-		bit_count++;
-	return (bit_count);
-}
-
-int	should_push_to_b(t_list *node, int bit_index)
-{
-	return (((node->data >> bit_index) & 1) == 0);
-}
-
-void	distribute_by_bit(t_stack *a, t_stack *b, int bit_index, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (should_push_to_b(a->head, bit_index))
-			pb(a, b);
-		else
-			ra(a);
-		i++;
-	}
-}
-
-void	radix(t_stack *a, t_stack *b, size_t stack_a_size)
-{
-	int		max_num;
-	int		bit_count;
-	int		bit_index;
-	size_t	stack_b_size;
-
-	max_num = 0;
-	bit_index = 0;
-	if (!ps_lst_max(a->head, &max_num))
+	max = 0;
+	if (!ps_lst_max(a->head, &max))
 		return ;
-	bit_count = count_bits(max_num);
-	while (bit_index < bit_count)
+	arr = malloc(sizeof(int) * size);
+	if (!arr)
+		return ;
+	fill_array(a->head, arr, size);
+	sort_int_tab(arr, size);
+	assign_pos(a->head, arr, size);
+	passes = count_bits(size - 1);
+	bit_pos = 0;
+	while (bit_pos < passes)
 	{
-		distribute_by_bit(a, b, bit_index, stack_a_size);
-		stack_b_size = ps_lst_size(b->head);
-		while (stack_b_size > 0)
-		{
+		process_bit_pos(a, b, size, bit_pos);
+		while (b->size > 0)
 			pa(a, b);
-			stack_b_size--;
-		}
-		bit_index++;
+		bit_pos++;
 	}
+	free(arr);
 }
