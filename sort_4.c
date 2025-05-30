@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:10:18 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 17:38:49 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:02:26 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	sort_4(t_stack *a, t_stack *b)
 	size_t	smallest_node_index;
 
 	if (!is_elements_4(a))
-		return ;
-	if (is_sorted_ascending(a))
 		return ;
 	smallest_node = find_smallest_node(a);
 	smallest_node_index = find_smallest_node_index(a, smallest_node);

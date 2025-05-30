@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:12:19 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/29 18:54:05 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:22:30 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int		arr_to_list(int *num, int count, t_list **list);
 t_list	*ps_lst_new(int nbr);
 void	ps_lst_add_back(t_list **lst, t_list *node);
 size_t	ps_lst_size(t_list *head);
-void	free_list(t_list *head);
 int		sort_stack(t_list *list_of_num);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
@@ -72,7 +71,8 @@ t_list	*find_smallest_node(t_stack *a);
 size_t	find_smallest_node_index(t_stack *a, t_list *smallest_node);
 void	sort_4(t_stack *a, t_stack *b);
 int		is_sorted_ascending(t_stack *a);
-void	radix(t_stack *a, t_stack *b);
+void	radix(t_stack *a, t_stack *b, size_t stack_a_size);
 int		ps_lst_max(t_list *lst, int *max);
+void	free_list(t_list **head);
 
 #endif

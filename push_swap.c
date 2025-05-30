@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 16:11:57 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 17:41:40 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:22:30 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	error_and_free_numbers(int *num)
 int	error_and_cleanup(int *num, t_list *list_of_num)
 {
 	write(1, "Error\n", 6);
-	return (free(num), free_list(list_of_num), 1);
+	return (free(num), free_list(&list_of_num), 1);
 }
 
 int	main(int ac, char **av)
@@ -46,5 +46,5 @@ int	main(int ac, char **av)
 		if (!sorted)
 			return (error_and_cleanup(numbers, list_of_num));
 	}
-	return (free(numbers), free_list(list_of_num), EXIT_SUCCESS);
+	return (free(numbers), EXIT_SUCCESS);
 }

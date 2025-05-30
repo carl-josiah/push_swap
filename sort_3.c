@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:21:37 by ccastro           #+#    #+#             */
-/*   Updated: 2025/05/28 15:51:45 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:02:29 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	sort_3(t_stack *a)
 	first = a->head->data;
 	second = a->head->next->data;
 	third = a->head->next->next->data;
-	if (is_sorted_3(a))
-		return ;
 	if (first > second && second < third && first < third)
 		sa(a);
 	else if (first > second && second > third)
